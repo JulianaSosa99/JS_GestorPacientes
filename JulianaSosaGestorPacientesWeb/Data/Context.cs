@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using JulianaSosaGestorPacientesWeb.Models;
 
-namespace JulianaSosaGestorPacientes.Data
+namespace JulianaSosaGestorPacientesWeb.Data
 {
     public class Context : DbContext
     {

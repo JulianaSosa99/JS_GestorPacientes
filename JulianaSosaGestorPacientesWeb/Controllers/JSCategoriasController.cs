@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using JulianaSosaGestorPacientes.Data;
+using JulianaSosaGestorPacientesWeb.Data;
 using JulianaSosaGestorPacientesWeb.Models;
 
 namespace JulianaSosaGestorPacientesWeb.Controllers

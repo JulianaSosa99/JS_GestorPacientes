@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace JulianaSosaGestorPacientesWeb.Migrations
 {
     /// <inheritdoc />
-    public partial class IniciodbJS : Migration
+    public partial class JSDB : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
