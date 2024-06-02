@@ -1,0 +1,42 @@
+﻿@model JulianaSosaGestorPacientesWeb.Models.JSPaciente
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>JSPaciente</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JSNombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JSNombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JSApellido)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JSApellido)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JSEnfermedad)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JSEnfermedad)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.JSDNI)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.JSDNI)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.JSPacienteID">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

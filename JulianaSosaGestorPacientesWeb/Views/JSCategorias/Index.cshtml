@@ -1,0 +1,47 @@
+﻿@model IEnumerable<JulianaSosaGestorPacientesWeb.Models.JSCategoria>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.JSGravedad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JSFechaIngreso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.JSPaciente)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSGravedad)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSFechaIngreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.JSPaciente.JSApellido)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.JSCategoriaID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.JSCategoriaID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.JSCategoriaID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
