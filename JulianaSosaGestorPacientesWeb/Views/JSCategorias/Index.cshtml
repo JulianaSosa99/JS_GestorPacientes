@@ -7,7 +7,10 @@
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-secondary d-block mx-auto btn-lg">
+        <i class="fa fa-plus" aria-hidden="true"></i>Crear
+
+    </a>
 </p>
 <table class="table">
     <thead>
@@ -27,21 +30,23 @@
     <tbody>
 @foreach (var item in Model) {
         <tr>
-            <td>
+             <td> 
                 @Html.DisplayFor(modelItem => item.JSGravedad)
-            </td>
-            <td>
+           </td>
+           <td>
                 @Html.DisplayFor(modelItem => item.JSFechaIngreso)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.JSPaciente.JSApellido)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.JSCategoriaID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.JSCategoriaID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.JSCategoriaID">Delete</a>
+                <a class="btn btn-success" asp-action="Edit" asp-route-id="@item.JSCategoriaID"> <i class="fa fa-pencil-square" aria-hidden="true"></i>Editar</a> |
+                <a class="btn btn-warning" asp-action="Details" asp-route-id="@item.JSCategoriaID"> <i class="fa fa-info-circle" aria-hidden="true"></i> Detalles</a> |
+                <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.JSCategoriaID"><i class="fa fa-trash" aria-hidden="true"></i>Eliminar</a>
             </td>
         </tr>
-}
+}           
     </tbody>
 </table>
+<a class="btn btn-success" asp-controller="Home" asp-action="Index">Volver</a>
+

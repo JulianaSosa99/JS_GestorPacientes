@@ -30,7 +30,12 @@
             @Html.DisplayFor(model => model.JSPaciente.JSApellido)
         </dd>
     </dl>
-    
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success d-block mx-auto">
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> Eliminar
+        </button>
+
+    </div>
     <form asp-action="Delete">
         <input type="hidden" asp-for="JSCategoriaID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |

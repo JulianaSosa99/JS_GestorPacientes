@@ -1,0 +1,6 @@
+@JSPacientesAPI_HostAddress = http://localhost:5084
+
+GET {{JSPacientesAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
