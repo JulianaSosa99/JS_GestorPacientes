@@ -26,7 +26,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // GET: JSPacientes/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> JSDetails(int? id)
         {
             if (id == null)
             {
@@ -44,7 +44,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // GET: JSPacientes/Create
-        public IActionResult Create()
+        public IActionResult JSCreate()
         {
             return View();
         }
@@ -54,7 +54,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("JSPacienteID,JSNombre,JSApellido,JSEnfermedad,JSDNI")] JSPaciente jSPaciente)
+        public async Task<IActionResult> JSCreate([Bind("JSPacienteID,JSNombre,JSApellido,JSEnfermedad,JSDNI")] JSPaciente jSPaciente)
         {
             if (ModelState.IsValid)
             {
@@ -66,7 +66,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // GET: JSPacientes/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> JSEdit(int? id)
         {
             if (id == null)
             {
@@ -86,7 +86,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JSPacienteID,JSNombre,JSApellido,JSEnfermedad,JSDNI")] JSPaciente jSPaciente)
+        public async Task<IActionResult> JSEdit(int id, [Bind("JSPacienteID,JSNombre,JSApellido,JSEnfermedad,JSDNI")] JSPaciente jSPaciente)
         {
             if (id != jSPaciente.JSPacienteID)
             {
@@ -117,7 +117,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // GET: JSPacientes/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> JSDelete(int? id)
         {
             if (id == null)
             {
@@ -135,7 +135,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // POST: JSPacientes/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("JSDelete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {

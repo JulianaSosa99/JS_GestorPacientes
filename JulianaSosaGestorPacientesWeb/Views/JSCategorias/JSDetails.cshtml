@@ -1,12 +1,11 @@
 ﻿@model JulianaSosaGestorPacientesWeb.Models.JSCategoria
 
 @{
-    ViewData["Title"] = "Eliminar";
+    ViewData["Title"] = "JS_Detalles";
 }
 
-<h1>JS_Eliminar</h1>
+<h1>JS_Detalles</h1>
 
-<h3>Estas seguro/a de eliminar la categoria?</h3>
 <div>
     <h4>JSCategoria</h4>
     <hr />
@@ -30,12 +29,10 @@
             @Html.DisplayFor(model => model.JSPaciente.JSApellido)
         </dd>
     </dl>
-    
+</div>
+<div>
+    <a class="btn btn-success" asp-action="JSEdit" asp-route-id="@Model?.JSCategoriaID">Editar</a> |
+    <a class="btn btn-secondary" asp-action="Index">Volver</a>
 
-   
-    <form asp-action="Delete">
-        <input type="hidden" asp-for="JSCategoriaID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a class="btn btn-secondary" asp-action="Index">Volver</a>
-    </form>
+
 </div>

@@ -1,11 +1,12 @@
 ﻿@model JulianaSosaGestorPacientesWeb.Models.JSPaciente
 
 @{
-    ViewData["Title"] = "Información";
+    ViewData["Title"] = "Eliminar";
 }
 
-<h1>JS Informacion</h1>
+<h1>JS Eliminar</h1>
 
+<h3> Estas seguro/a de eliminar al Paciente?</h3>
 <div>
     <h4>JSPaciente</h4>
     <hr />
@@ -35,8 +36,10 @@
             @Html.DisplayFor(model => model.JSDNI)
         </dd>
     </dl>
-</div>
-<div>
-    <a class="btn btn-check" asp-action="Edit" asp-route-id="@Model?.JSPacienteID">Edit</a> |
-    <a class="btn btn-secondary" asp-action="Index">Volver</a>
+    
+    <form asp-action="JSDelete">
+        <input type="hidden" asp-for="JSPacienteID" />
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a class="btn btn-secondary" asp-action="Index">Volver</a>
+    </form>
 </div>

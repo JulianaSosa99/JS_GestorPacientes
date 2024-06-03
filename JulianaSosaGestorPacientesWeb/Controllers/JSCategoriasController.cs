@@ -27,7 +27,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // GET: JSCategorias/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> JSDetails(int? id)
         {
             if (id == null)
             {
@@ -46,7 +46,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // GET: JSCategorias/Create
-        public IActionResult Create()
+        public IActionResult JSCreate()
         {
             ViewData["JSPacienteID"] = new SelectList(_context.JSPaciente, "JSPacienteID", "JSApellido");
             return View();
@@ -57,7 +57,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("JSCategoriaID,JSGravedad,JSFechaIngreso,JSPacienteID")] JSCategoria jSCategoria)
+        public async Task<IActionResult> JSCreate([Bind("JSCategoriaID,JSGravedad,JSFechaIngreso,JSPacienteID")] JSCategoria jSCategoria)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +70,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // GET: JSCategorias/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> JSEdit(int? id)
         {
             if (id == null)
             {
@@ -91,7 +91,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("JSCategoriaID,JSGravedad,JSFechaIngreso,JSPacienteID")] JSCategoria jSCategoria)
+        public async Task<IActionResult> JSEdit(int id, [Bind("JSCategoriaID,JSGravedad,JSFechaIngreso,JSPacienteID")] JSCategoria jSCategoria)
         {
             if (id != jSCategoria.JSCategoriaID)
             {
@@ -123,7 +123,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // GET: JSCategorias/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> JSDelete(int? id)
         {
             if (id == null)
             {
@@ -142,7 +142,7 @@ namespace JulianaSosaGestorPacientesWeb.Controllers
         }
 
         // POST: JSCategorias/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost, ActionName("JSDelete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
