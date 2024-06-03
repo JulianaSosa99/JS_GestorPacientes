@@ -12,7 +12,7 @@ namespace JSGestionPacientesMAUI
             InitializeComponent();
         }
 
-        private void Pacientes(object sender, EventArgs e)
+        private void JSPacientes(object sender, EventArgs e)
         {
             var client = new HttpClient();
             client.BaseAddress = new Uri("https://localhost:7046/api/");
