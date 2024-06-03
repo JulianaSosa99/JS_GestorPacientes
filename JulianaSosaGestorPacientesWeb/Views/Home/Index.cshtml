@@ -1,7 +1,15 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "JS_TareaPersonalizada";
 }
 
 <div class="text-center">
     <h1 class="display-4">Juliana Sosa Tarea Personalizada</h1>
+        <h1 class="display-4">Gestion de Pacientes</h1>
+
+        <div>
+            <a class="btn btn-outline-danger" asp-controller="JSPacientes" asp-action="Index">Gestionar Paciente</a>
+            <a class="btn btn-outline-danger" asp-controller="JSCategorias" asp-action="Index">Gestionar Categorias</a>
+        </div>
+
+    <img src="https://www.verywellhealth.com/thmb/EYBDszY0auCNw8ogjTuwh6MGyTI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/493216423-56a46de65f9b58b7d0d6f3a2.jpg" alt="GESTION DE PACIENTES" class="img-fluid" />
 </div>
