@@ -1,12 +1,12 @@
 ﻿@model JulianaSosaGestorPacientesWeb.Models.JSCategoria
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar";
 }
 
-<h1>Delete</h1>
+<h1>JS_Eliminar</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Estas seguro/a de eliminar la categoria?</h3>
 <div>
     <h4>JSCategoria</h4>
     <hr />
@@ -30,15 +30,12 @@
             @Html.DisplayFor(model => model.JSPaciente.JSApellido)
         </dd>
     </dl>
-    <div class="form-group mt-3">
-        <button type="submit" class="btn btn-success d-block mx-auto">
-            <i class="fa fa-plus-circle" aria-hidden="true"></i> Eliminar
-        </button>
+    
 
-    </div>
+   
     <form asp-action="Delete">
         <input type="hidden" asp-for="JSCategoriaID" />
         <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <a class="btn btn-secondary" asp-action="Index">Volver</a>
     </form>
 </div>

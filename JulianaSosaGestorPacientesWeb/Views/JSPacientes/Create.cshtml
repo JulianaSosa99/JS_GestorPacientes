@@ -1,10 +1,10 @@
 ﻿@model JulianaSosaGestorPacientesWeb.Models.JSPaciente
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "JSCrear";
 }
 
-<h1>Create</h1>
+<h1>JS Añadir Paciente</h1>
 
 <h4>JSPaciente</h4>
 <hr />
@@ -33,15 +33,16 @@
                 <span asp-validation-for="JSDNI" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Añadir Paciente" class="btn btn-success" />
+            </div>
+            <div>
+                <a class="btn btn-secondary" asp-action="Index">Volver</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

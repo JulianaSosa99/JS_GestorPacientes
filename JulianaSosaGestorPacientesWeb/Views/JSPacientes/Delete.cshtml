@@ -1,12 +1,12 @@
 ﻿@model JulianaSosaGestorPacientesWeb.Models.JSPaciente
 
 @{
-    ViewData["Title"] = "Delete";
+    ViewData["Title"] = "Eliminar";
 }
 
-<h1>Delete</h1>
+<h1>JS Eliminar</h1>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3> Estas seguro/a de eliminar al Paciente?</h3>
 <div>
     <h4>JSPaciente</h4>
     <hr />
@@ -39,7 +39,7 @@
     
     <form asp-action="Delete">
         <input type="hidden" asp-for="JSPacienteID" />
-        <input type="submit" value="Delete" class="btn btn-danger" /> |
-        <a asp-action="Index">Back to List</a>
+        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+        <a class="btn btn-secondary" asp-action="Index">Volver</a>
     </form>
 </div>
