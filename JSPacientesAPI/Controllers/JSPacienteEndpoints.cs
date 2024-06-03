@@ -11,17 +11,17 @@ public static class JSPacienteEndpoints
     {
         var group = routes.MapGroup("/api/JSPaciente").WithTags(nameof(JSPaciente));
 
-        group.MapGet("/", async (JSPacientesContext db) =>
+        group.MapGet("/", async (JSPacientesAPIContext db) =>
         {
             return await db.JSPaciente.ToListAsync();
         })
         .WithName("GetAllJSPacientes")
         .WithOpenApi();
 
-        group.MapGet("/{id}", async Task<Results<Ok<JSPaciente>, NotFound>> (int JSPacienteID, JSPacientesContext db) =>
+        group.MapGet("/{id}", async Task<Results<Ok<JSPaciente>, NotFound>> (int jspacienteid, JSPacientesAPIContext db) =>
         {
             return await db.JSPaciente.AsNoTracking()
-                .FirstOrDefaultAsync(model => model.JSPacienteID == JSPacienteID)
+                .FirstOrDefaultAsync(model => model.JSPacienteID == jspacienteid)
                 is JSPaciente model
                     ? TypedResults.Ok(model)
                     : TypedResults.NotFound();
@@ -29,10 +29,10 @@ public static class JSPacienteEndpoints
         .WithName("GetJSPacienteById")
         .WithOpenApi();
 
-        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int JSPacienteID, JSPaciente jSPaciente, JSPacientesContext db) =>
+        group.MapPut("/{id}", async Task<Results<Ok, NotFound>> (int jspacienteid, JSPaciente jSPaciente, JSPacientesAPIContext db) =>
         {
             var affected = await db.JSPaciente
-                .Where(model => model.JSPacienteID == JSPacienteID)
+                .Where(model => model.JSPacienteID == jspacienteid)
                 .ExecuteUpdateAsync(setters => setters
                     .SetProperty(m => m.JSPacienteID, jSPaciente.JSPacienteID)
                     .SetProperty(m => m.JSNombre, jSPaciente.JSNombre)
@@ -45,7 +45,7 @@ public static class JSPacienteEndpoints
         .WithName("UpdateJSPaciente")
         .WithOpenApi();
 
-        group.MapPost("/", async (JSPaciente jSPaciente, JSPacientesContext db) =>
+        group.MapPost("/", async (JSPaciente jSPaciente, JSPacientesAPIContext db) =>
         {
             db.JSPaciente.Add(jSPaciente);
             await db.SaveChangesAsync();
@@ -54,10 +54,10 @@ public static class JSPacienteEndpoints
         .WithName("CreateJSPaciente")
         .WithOpenApi();
 
-        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int JSPacienteID, JSPacientesContext db) =>
+        group.MapDelete("/{id}", async Task<Results<Ok, NotFound>> (int jspacienteid, JSPacientesAPIContext db) =>
         {
             var affected = await db.JSPaciente
-                .Where(model => model.JSPacienteID == JSPacienteID)
+                .Where(model => model.JSPacienteID == jspacienteid)
                 .ExecuteDeleteAsync();
             return affected == 1 ? TypedResults.Ok() : TypedResults.NotFound();
         })

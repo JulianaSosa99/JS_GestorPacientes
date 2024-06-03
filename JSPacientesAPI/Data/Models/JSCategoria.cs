@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace JSPacientesAPI.Data.Models;
 
-public partial class JSCategoria
+public class JSCategoria
 {
     [Key]
     public int JSCategoriaID { get; set; }

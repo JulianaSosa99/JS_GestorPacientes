@@ -1,5 +1,10 @@
-using JSPacientesAPI.Controllers;
+﻿using JSPacientesAPI.Controllers;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using JSPacientesAPI.Data;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<JSPacientesAPIContext>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("JSPacientesAPIContext") ?? throw new InvalidOperationException("Connection string 'JSPacientesAPIContext' not found.")));
 
 // Add services to the container.
 
@@ -25,4 +30,9 @@ app.MapControllers();
 
 app.MapJSPacienteEndpoints();
 
+app.MapJSCategoriaEndpoints();
+
+ 
+
+ 
 app.Run();
