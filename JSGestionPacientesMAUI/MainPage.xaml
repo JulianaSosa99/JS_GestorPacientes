@@ -1,25 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JSGestionPacientesMAUI.MainPage">
+             x:Class="JSGestionPacientesMAUI.MainPage"
+             BackgroundColor="White">
 
     <Grid>
-        <StackLayout>
-            <Label Text="Lista de Pacientes" HorizontalOptions="Center" VerticalOptions="Start"/>
-            <Button Text="Listar Pacientes" Clicked="Pacientes" HorizontalOptions="Center"/>
-            
-            
-            <ListView x:Name="listView">
+
+            <StackLayout>
+            <Label Text="Lista de Pacientes" HorizontalOptions="Center" VerticalOptions="Start" TextColor="Black"/>
+            <Button Text="Listar Pacientes" Clicked="Pacientes" HorizontalOptions="Center" TextColor="White" BackgroundColor="DarkRed"/>
+
+            <ListView x:Name="listView" BackgroundColor="Beige">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <TextCell Text="{Binding jsNombre}"/>
+                        <TextCell Text="{Binding jsNombre}" TextColor="Black"/>
                     </DataTemplate>
                 </ListView.ItemTemplate>
+            
+       
+              
             </ListView>
                       
-           
-            
+  
         </StackLayout>
     </Grid>
-
+    
 </ContentPage>
