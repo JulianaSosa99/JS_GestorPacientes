@@ -30,7 +30,7 @@ app.MapControllers();
 
 app.MapJSPacienteEndpoints();
 
-app.MapJSCategoriaEndpoints();
+ 
 
  
 
